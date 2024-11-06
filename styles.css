@@ -1,0 +1,335 @@
+/* Общие стили для страницы */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1c1c26, #111216, #2e2e3d, #181820); /* Dark midnight style */
+    background-size: 400% 400%;
+    animation: gradientBackground 7s ease infinite; /* Smooth background transition */
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Анимация фона */
+@keyframes gradientBackground {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Стили для контейнера терминала */
+#terminal {
+    width: 380px; /* Ширина контейнера */
+    height: 550px; /* Высота контейнера */
+    background-color: rgba(30, 30, 30, 0.85); /* Темный полупрозрачный фон */
+    color: #A2B1C1; /* Светло-серый цвет для текста */
+    border-radius: 10px;
+    border: 2px solid #2f3640;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+    transform-style: preserve-3d; /* Для 3D-преобразований */
+    perspective: 1000px; /* Перспектива для 3D-эффекта */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Плавные трансформации */
+}
+
+/* Стили для эффекта сгиба */
+#terminal:hover {
+    transform: rotateX(25deg) rotateY(15deg); /* Применяем 3D-вращение на терминал */
+    filter: brightness(1.2); /* Подсвечиваем терминал при наведении */
+}
+
+/* Стили для текста TheUltraaa */
+#theUltraaa {
+    font-size: 28px; /* Размер шрифта */
+    font-weight: bold; /* Жирное начертание */
+    color: #A2B1C1; /* Цвет текста */
+    position: relative;
+    top: -20px; /* Поднимем текст выше относительно его исходного положения */
+}
+
+
+
+/* Стили для аватара */
+#avatar {
+    margin-bottom: 10px;
+}
+
+#avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* Стили для текста в терминале */
+#terminal-text {
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #A2B1C1;
+}
+
+/* Стили для иконок */
+#icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    filter: brightness(0) invert(1);
+}
+
+.icon:hover {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+/* Стили для описания */
+#description {
+    width: 90%;
+    height: 75px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(30, 30, 30, 0.85);
+    color: #A2B1C1;
+    border-radius: 10px;
+    border: 2px solid #2f3640;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 16px;
+}
+
+#description-text {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Стили для кнопок */
+#button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 80%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.terminal-button {
+    background-color: #2f3640;
+    color: #A2B1C1;
+    border: 1px solid #444c57;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.terminal-button:hover {
+    background-color: #444c57;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.15);
+}
+
+/* Стили для футера */
+#footer {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+#footer a {
+    color: #A2B1C1;
+    text-decoration: none;
+    font-weight: bold;
+    animation: colorWave 3s ease-in-out infinite;
+    background-image: linear-gradient(90deg, #A2B1C1, #ffffff);
+    background-size: 200%;
+    background-position: 100% 50%;
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline;
+    padding: 0 2px;
+}
+/* Стиль для круга при клике */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Этот стиль будет для самого круга */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    animation: ripple 0.6s linear;
+    pointer-events: none; /* Чтобы клик не блокировал дальнейшее взаимодействие */
+}
+/* Стили для снежинок */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Снежинки будут поверх всего */
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Анимация для снежинок */
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) scale(1);
+    }
+    100% {
+        transform: translateY(100vh) scale(0.5);
+    }
+}
+
+/* Настройки для разных снежинок */
+.snowflake:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    left: 10%;
+    animation-duration: 4s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    left: 20%;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+}
+
+.snowflake:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    left: 30%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(4) {
+    width: 12px;
+    height: 12px;
+    left: 40%;
+    animation-duration: 5s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(5) {
+    width: 5px;
+    height: 5px;
+    left: 50%;
+    animation-duration: 4.5s;
+    animation-delay: 0.3s;
+}
+
+.snowflake:nth-child(6) {
+    width: 9px;
+    height: 9px;
+    left: 60%;
+    animation-duration: 7s;
+    animation-delay: 0.7s;
+}
+
+.snowflake:nth-child(7) {
+    width: 7px;
+    height: 7px;
+    left: 70%;
+    animation-duration: 6.5s;
+    animation-delay: 0.9s;
+}
+
+.snowflake:nth-child(8) {
+    width: 10px;
+    height: 10px;
+    left: 80%;
+    animation-duration: 5s;
+    animation-delay: 1.2s;
+}
+
+.snowflake:nth-child(9) {
+    width: 6px;
+    height: 6px;
+    left: 90%;
+    animation-duration: 4s;
+    animation-delay: 0.5s;
+}
+
+.snowflake:nth-child(10) {
+    width: 11px;
+    height: 11px;
+    left: 5%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+/* Анимация волны цвета для ссылки в футере */
+@keyframes colorWave {
+    0% {
+        background-position: 100% 50%;
+    }
+    50% {
+        background-position: -100% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
